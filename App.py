@@ -3,22 +3,18 @@ import os
 from tkinter import ttk
 
 
-
-
-
-
 def Start():
     win.destroy()
     global win2
     win2 = Tk()
     win2.title("Movie Library")
-    win2.geometry("600x500")
+    win2.geometry("550x400")
     frame = Frame(win2)
     frame.pack()
 
     #Saving User input of Movie information
     movie_info_frame = LabelFrame(frame, text= "Movie Information")
-    movie_info_frame.grid(row=0, column= 0, sticky="news", padx=20, pady=20)
+    movie_info_frame.grid(row=0, column= 0, sticky="news", padx=20, pady=10)
 
     name_of_movie_label = Label(movie_info_frame, text= "Movie Name")
     name_of_movie_label.grid(row= 0, column= 0)
@@ -43,7 +39,7 @@ def Start():
     
     #Creating second box of info
     movie_genre_time_frame = LabelFrame(frame, text= "Movie Genre & Time")
-    movie_genre_time_frame.grid(row=1, column=0, sticky="news", padx=20, pady=20)
+    movie_genre_time_frame.grid(row=1, column=0, sticky="news", padx=20, pady=10)
 
     genre_title = Label(movie_genre_time_frame, text= "Genre")
     genre_title.grid(row= 3, column= 1)
@@ -64,7 +60,7 @@ def Start():
         widget.grid_configure(padx= 15, pady= 5)
     
     movie_rating_frame = LabelFrame(frame, text= "Movie Rating & Recommendation")
-    movie_rating_frame.grid(row=2, column= 0, sticky="news", padx=20, pady= 20)
+    movie_rating_frame.grid(row=2, column= 0, sticky="news", padx=20, pady= 10)
 
     rating_title = Label(movie_rating_frame, text= "Rating")
     rating_title.grid(row= 0, column= 0)
@@ -82,9 +78,12 @@ def Start():
         widget.grid_configure(padx= 15, pady= 5)
 
     #Adding "Add Movie" Button
+    add_movie_button = Button(frame, text= "Add Movie")
+    add_movie_button.grid( row=3, column=0)
 
-
-
+    #Adding "Find Movie" Button
+    find_movie_button = Button(frame,text="Find a Movie")
+    find_movie_button.grid (row= 4, column= 0, pady=10)
 
 def Mainscreen():
     global win
