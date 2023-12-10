@@ -1,3 +1,8 @@
-Movie, Director Name, Movie id, Genre, Duration in hours, Duration in Minutes, Rating, Recommendation
-The Hobbit: An Unexpected Journey, Peter jackson, 7777 , Fantasy, 2, 49, 10, Recommended
+Movie, Director Name,Movie id, Genre, Duration in hours, Duration in Minutes, Rating, Recommendation
+The Hobbit: An Unexpected Journey, Peter jackson,7777,Fantasy, 2, 49, 10, Recommended
 Batman Begins,Christopher Nolan,7808,Action,2,30,10,Recomended,
+Kung Fu Panda,"John Stevenson, Mark Osborne",7800,Action,1,32,9.5,Recomended
+Pirates of the Carribean: The Curse of the Black Pearl,Gore Verbinski,7707,Adventure,2,23,10,Recomended
+Blade Runner 2049,Denis Villeneuve,7700,Sci-fi,2,32,8.5,Recomended
+Little Women,Greta Gerwig,7000,Romance,2,15,8.5,Recomended
+Django Unchained,Quentin Tarantino,6061,Thriller,2,45,9,Recomended

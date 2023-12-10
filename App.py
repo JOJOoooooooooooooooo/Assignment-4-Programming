@@ -9,7 +9,7 @@ def find_movie():
     win2.destroy()
     win3= Tk()
     win3.title("Find My Movie")
-    win3.geometry("750x400")
+    win3.geometry("900x400")
     frame = Frame(win3)
     frame.pack()
 
@@ -49,8 +49,21 @@ def find_movie():
 
     id_entry = Entry(list_of_movies_frame)
     id_entry.grid(row=0, column=3, padx=15)
+    
+    def find_by_id():
+        movie_id = id_entry.get()
+        for index, movie in enumerate(Data):
+            if str(movie[2]) == str(movie_id):
+                listbox1.selection_clear(0, END)
+                listbox1.selection_set(index)
+                listbox1.activate(index)
+                update()
+                break
+        else:
+            messagebox.showwarning("Movie Not Found", "No movie found with the specified ID.")
+        update()
 
-    find_button = Button(list_of_movies_frame, text="Find by ID")
+    find_button = Button(list_of_movies_frame, text="Find by ID", command= find_by_id)
     find_button.grid(row=1,column=3,padx= 15)
 
     movie_name_label = Label(frame, text= "Movie Name")
@@ -182,10 +195,20 @@ def add_movie():
 
         file.close()
 
-    
+        movie_name_entry.delete(0, END)
+        director_name_entry.delete(0, END)
+        movie_id_entry.delete(0, END)
+        genre_combobox.set("")  # Set to an empty string or a default value
+        time_spinbox.delete(0, END)  # Assuming you want to clear the Spinbox value
+        minutes_entry.delete(0, END)
+        rating_combobox.set("")  # Set to an empty string or a default value
+        rec_status_var.set("Not Recommended")
+        
         print("Movie name:", movie_name, " Director Name:", director_name, "Movie Id:", movie_id)
         print("Genre:", Genre, " Time(Hrs):", time_hrs, " Minutes:", time_mins, " Rating:", rating)
         print("Recommendation:", Recommendation)
+
+        messagebox.showinfo("Movie Added", "Movie successfully added!")
     else:
         messagebox.showerror(title="Error", message="All Variables Must be Added")
 
@@ -280,7 +303,8 @@ def Start():
 
     #Adding "Find Movie" Button
     find_movie_button = Button(frame,text="Find a Movie", command= find_movie)
-    find_movie_button.grid (row= 4, column= 0, pady=10)
+    find_movie_button.grid (row= 4, column= 0, pady=10) 
+
 
 def Mainscreen():
     global win
